@@ -10,8 +10,28 @@ public class Cart {
 
     private List<Item> items = new ArrayList<>();
 
-    public boolean addItem(Item item) {
-        return items.add(item);
+    public boolean addItem(Product product, int amount){
+        for(Item item:items){
+            if(item.getProduct() == product) {
+                return item.add(amount);
+
+            }
+        }
+
+        return items.add(new Item(product, amount));
+    }
+
+    public boolean removeItem(Product product, int amount){
+        for(Item item:items){
+            if(item.getProduct() == product)
+                return item.remove(amount);
+        }
+        return false;
+    }
+
+    public boolean emptyCart(){
+        items.clear();
+        return true;
     }
 
     @Override

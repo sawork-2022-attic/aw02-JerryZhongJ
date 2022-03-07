@@ -13,4 +13,17 @@ public class Item {
     public String toString(){
         return product.toString() +"\t" + amount;
     }
+
+    public boolean add(int addAmount){
+        amount += addAmount;
+        return true;
+    }
+
+    public boolean remove(int rmAmount){
+        if(amount < rmAmount)
+            return false;
+
+        amount -= rmAmount;
+        return false;
+    }
 }
