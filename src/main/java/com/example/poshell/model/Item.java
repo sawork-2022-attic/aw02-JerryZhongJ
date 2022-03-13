@@ -24,6 +24,6 @@ public class Item {
             return false;
 
         amount -= rmAmount;
-        return false;
+        return true;
     }
 }

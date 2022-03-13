@@ -39,7 +39,7 @@ public class PosCommand {
         return "ERROR";
     }
 
-    @ShellMethod(value="Print items in cart", key="print-cart")
+    @ShellMethod(value="Print items in cart", key="print")
     public String printCart(){
         return posService.getCart().toString();
     }
@@ -51,7 +51,7 @@ public class PosCommand {
         else
             return "Error";
     }
-    @ShellMethod(value="Remove products from cart", key="remove")
+    @ShellMethod(value="Remove products from cart", key="rm")
     public String removeCart(String productId, int amount){
         if(posService.remove(productId, amount))
             return posService.getCart().toString();
